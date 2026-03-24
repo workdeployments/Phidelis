@@ -1,0 +1,44 @@
+import React from 'react';
+
+const TechnologyPowers = () => {
+  return (
+    <section className="w-full bg-[#FDFDFE] py-24 px-6 md:px-[60px] lg:px-[120px]">
+      <div className="max-w-[1440px] mx-auto">
+        <h2 className="text-[#24346D] font-['Inter'] font-semibold text-[32px] md:text-[40px] lg:text-[44px] tracking-tight mb-12">
+          Technology Powers Clarity and Control
+        </h2>
+
+        <div className="flex flex-col lg:flex-row gap-6 items-stretch">
+          
+          {/* Left Column - Purple Box */}
+          <div className="w-full lg:w-[38%] bg-[#762D85] rounded-[16px] p-8 md:p-10 flex flex-col justify-between shadow-md min-h-[440px]">
+            <div>
+              <h3 className="text-white font-['Inter'] font-bold text-[22px] md:text-[24px] tracking-tight mb-6">
+                Technology - Enabled
+              </h3>
+              <p className="text-white font-['Inter'] font-normal text-[15px] leading-[26px] opacity-90 w-full sm:max-w-[90%] lg:max-w-full">
+                Continuous monitoring and analytics provide control, foresight, and measurable transparency.
+              </p>
+            </div>
+            
+            <button className="mt-12 self-start bg-white text-[#24346D] rounded-[32px] px-8 py-3 font-['Inter'] font-medium text-[15px] hover:bg-gray-100 transition-colors shadow-sm">
+              Learn more
+            </button>
+          </div>
+
+          {/* Right Column - Image */}
+          <div className="w-full lg:w-[62%] rounded-[16px] overflow-hidden shadow-md min-h-[440px]">
+             <img 
+               src="/homePage/technologyPowerCalrity.jpg" 
+               alt="Technology Powers Clarity" 
+               className="w-full h-full object-cover"
+             />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TechnologyPowers;
