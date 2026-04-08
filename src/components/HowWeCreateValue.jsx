@@ -123,7 +123,7 @@ const HowWeCreateValue = () => {
           {/* Right Side: Large Feature Image with specific dimensions */}
           <div className="hcv-image-container w-[280px] h-[300px] rounded-[12px] overflow-hidden flex flex-col justify-between py-[48px] px-[10px] shrink-0 relative z-0">
             <img
-              src="/homePage/hoeWeCreateValueImg.jpg"
+              src="/homePage/howWeCreateValueImg.jpg"
               alt="Singapore Skyline"
               // Removed -z-10
               className="absolute inset-0 w-full h-full object-cover"

@@ -18,7 +18,7 @@ const CompanyIntro = () => {
         {/* Right Side - Image */}
         <div 
           className="w-full md:w-[55%] lg:w-[58%] min-h-[350px] md:min-h-[480px] bg-cover bg-center"
-          style={{ backgroundImage: "url('/company/intro_image.png')" }}
+          style={{ backgroundImage: "url('/company/intro-image.jpg')" }}
         >
         </div>
         

@@ -53,8 +53,8 @@ const HomeHero = () => {
 
       {/* Get Started Button */}
       <div className="hero-elem mt-[24px]">
-        <button className="flex items-center justify-center gap-[10px] w-[137px] h-[43px] px-[24px] py-[12px] bg-white text-[#24346D] rounded-[30px] font-['Inter'] font-normal text-[16px] leading-[100%] hover:bg-gray-100 transition-colors">
-          Get Started
+        <button className="flex items-center justify-center gap-[10px] px-[24px] py-[12px] bg-white text-[#24346D] rounded-[30px] font-['Inter'] font-normal text-[16px] leading-[100%] hover:bg-gray-100 transition-colors">
+          Discover More
         </button>
       </div>
     </section>

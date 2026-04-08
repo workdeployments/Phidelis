@@ -87,7 +87,7 @@ const PersonalisedSolutions = () => {
           {/* Left Column - Image */}
           <div className="ps-image w-full lg:w-[45%] h-[350px] lg:h-auto rounded-[16px] overflow-hidden flex-shrink-0 shadow-lg">
             <img 
-              src="/homePage/presonalisedSolutions.jpg" 
+              src="/homePage/personalisedSolution.jpg" 
               alt="Personalised Solutions" 
               className="w-full h-full object-cover"
             />
