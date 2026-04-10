@@ -70,18 +70,18 @@ const HowWeCreateValue = () => {
       <div className="max-w-[1440px] mx-auto">
 
         {/* Section Title */}
-        <h2 className="hcv-title text-[#24346D] font-['Inter'] font-medium text-[40px] mb-16">
+        <h2 className="hcv-title text-[#24346D] font-['Inter'] font-medium text-[clamp(32px,5vw,40px)] mb-16">
           How We Create Value
         </h2>
 
         <div className="flex flex-col lg:flex-row gap-10 items-stretch">
 
-          {/* Left Side: Cards Container linearly */}
-          <div className="hcv-cards-container flex-1 grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16 items-start content-start">
+          {/* Left Side: Cards Container */}
+          <div className="hcv-cards-container flex-1 grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-6 md:gap-y-16 items-start content-start">
             {cards.map((card, idx) => (
-              <div key={idx} className="hcv-card flex flex-col items-start max-w-[260px] h-full">
+              <div key={idx} className="hcv-card flex flex-col items-start md:max-w-[260px] h-full">
                 {/* Icon Container */}
-                <div className="h-16 flex items-center mb-8">
+                <div className="h-16 flex items-center mb-4 md:mb-8">
                   <img
                     src={card.icon}
                     alt={card.title}
@@ -89,43 +89,44 @@ const HowWeCreateValue = () => {
                   />
                 </div>
 
-                {/* Text Content */}
-                <h3 className="text-[#24346D] font-['Inter'] font-bold text-2xl mb-6">
+                {/* Title */}
+                <h3 className="text-[#24346D] font-['Inter'] font-bold text-2xl mb-4 md:mb-6">
                   {card.title}
                 </h3>
-                <p className="text-[#24346D] font-['Inter'] font-normal text-base leading-relaxed opacity-70 mb-8 flex-grow">
-                  {card.description}
-                </p>
 
-                {/* Action Button */}
-                <button
-                  className="mt-auto w-9 h-9 bg-[#1E2B58] rounded-full flex items-center justify-center hover:bg-blue-900 transition-all group shrink-0"
-                  aria-label={`Learn more about ${card.title}`}
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                {/* Description + Arrow row on mobile, stacked on desktop */}
+                <div className="flex items-center justify-between w-full md:flex-col md:items-start md:gap-8 md:flex-grow">
+                  <p className="text-[#24346D] font-['Inter'] font-normal text-base leading-relaxed opacity-70 flex-1 pr-4 md:pr-0">
+                    {card.description}
+                  </p>
+                  <button
+                    className="w-9 h-9 bg-[#1E2B58] rounded-full flex items-center justify-center hover:bg-blue-900 transition-all group shrink-0 md:mt-auto"
+                    aria-label={`Learn more about ${card.title}`}
                   >
-                    <path
-                      d="M7 17L17 7M17 7H7M17 7V17"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                    >
+                      <path
+                        d="M7 17L17 7M17 7H7M17 7V17"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Right Side: Large Feature Image with specific dimensions */}
-          <div className="hcv-image-container w-[280px] h-[300px] rounded-[12px] overflow-hidden flex flex-col justify-between py-[48px] px-[10px] shrink-0 relative z-0">
+          {/* Right Side: Large Feature Image */}
+          <div className="hcv-image-container w-full lg:w-[280px] aspect-[4/3] lg:aspect-auto lg:h-[300px] rounded-[12px] overflow-hidden shrink-0 relative z-0">
             <img
               src="/homePage/howWeCreateValueImg.jpg"
               alt="Singapore Skyline"
-              // Removed -z-10
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>

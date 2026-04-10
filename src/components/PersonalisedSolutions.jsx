@@ -47,19 +47,19 @@ const PersonalisedSolutions = () => {
       duration: 0.6,
       ease: "power3.out",
     })
-    .from(".ps-card", {
-      y: 40,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.2,
-      ease: "power3.out",
-    }, "-=0.2")
-    .from(".ps-button", {
-      y: 20,
-      opacity: 0,
-      duration: 0.5,
-      ease: "power3.out",
-    }, "-=0.2");
+      .from(".ps-card", {
+        y: 40,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.2,
+        ease: "power3.out",
+      }, "-=0.2")
+      .from(".ps-button", {
+        y: 20,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power3.out",
+      }, "-=0.2");
 
   }, { scope: containerRef });
 
@@ -67,14 +67,14 @@ const PersonalisedSolutions = () => {
     <section ref={containerRef} className="relative w-full py-20 px-6 md:px-20 overflow-hidden">
       {/* Complex Background Gradient */}
       <div className="absolute inset-0 bg-[#24346D] -z-20"></div>
-      
+
       {/* Top Right Magenta Glow */}
       <div className="absolute top-[-20%] right-[-30%] w-[60%] h-[80%] bg-[#9818b2] blur-[150px] rounded-full pointer-events-none -z-10 opacity-70"></div>
-      
+
       <div className="absolute top-[-20%] left-[-30%] w-[60%] h-[80%] bg-black blur-[150px] rounded-full pointer-events-none -z-10 opacity-70"></div>
       {/* Bottom Left Blue Glow */}
       <div className="absolute bottom-[-20%] left-[-10%] w-[60%] h-[70%] bg-[#408fcb] blur-[140px] rounded-full pointer-events-none -z-10 opacity-80"></div>
-      
+
       {/* Bottom Right Cyan/Teal Glow */}
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[50%] bg-[#ffffff] blur-[120px] rounded-full pointer-events-none -z-10 opacity-50"></div>
 
@@ -86,9 +86,9 @@ const PersonalisedSolutions = () => {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-stretch">
           {/* Left Column - Image */}
           <div className="ps-image w-full lg:w-[45%] h-[350px] lg:h-auto rounded-[16px] overflow-hidden flex-shrink-0 shadow-lg">
-            <img 
-              src="/homePage/personalisedSolution.jpg" 
-              alt="Personalised Solutions" 
+            <img
+              src="/homePage/presonalisedSolutions.jpg"
+              alt="Personalised Solutions"
               className="w-full h-full object-cover"
             />
           </div>

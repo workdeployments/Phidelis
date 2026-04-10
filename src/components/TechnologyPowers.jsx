@@ -53,10 +53,10 @@ const TechnologyPowers = () => {
           Technology Powers Clarity and Control
         </h2>
 
-        <div className="tp-container flex flex-col lg:flex-row gap-6 items-stretch max-h-[430px]">
+        <div className="tp-container flex flex-col lg:flex-row gap-6 items-stretch lg:max-h-[430px]">
 
           {/* Left Column - Purple Box */}
-          <div className="tp-left w-full lg:w-[38%] bg-[#762D85] rounded-[16px] p-8 md:p-10 flex flex-col justify-between shadow-md min-h-[440px]">
+          <div className="tp-left w-full lg:w-[38%] bg-[#762D85] rounded-[16px] p-8 md:p-10 flex flex-col justify-between shadow-md lg:min-h-[440px]">
             <div>
               <h3 className="text-white font-['Inter'] font-bold text-[22px] md:text-[24px] tracking-tight mb-6">
                 Technology - Enabled
@@ -72,7 +72,7 @@ const TechnologyPowers = () => {
           </div>
 
           {/* Right Column - Image */}
-          <div className="tp-right w-full lg:w-[62%] rounded-[16px] overflow-hidden shadow-md min-h-[440px]">
+          <div className="tp-right w-full lg:w-[62%] rounded-[16px] overflow-hidden shadow-md aspect-video lg:aspect-auto lg:min-h-[440px]">
             <img
               src="/homePage/technologyPowerCalrity.jpg"
               alt="Technology Powers Clarity"

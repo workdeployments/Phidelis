@@ -36,17 +36,17 @@ const HomeHero = () => {
       <div className="absolute inset-0 bg-black/60 -z-10" />
 
       {/* Logo in Hero Section */}
-      <div className="hero-elem mb-[10px]">
-        <img src="/navBar/logo3.svg" alt="Phidelis Capital" className="w-[850px] h-[150px] object-contain" />
+      <div className="hero-elem mb-[10px] w-full max-w-[850px] px-4 md:px-0">
+        <img src="/navBar/logo3.svg" alt="Phidelis Capital" className="w-full h-auto max-h-[150px] object-contain" />
       </div>
 
       {/* Hero Content - Title and Subtitle with smaller gap */}
-      <div className="flex flex-col items-center gap-[6px]">
-        <h1 className="hero-elem text-white font-['Inter'] font-medium text-[64px] leading-[66px] tracking-normal text-center w-full">
+      <div className="flex flex-col items-center gap-[6px] px-2 w-full">
+        <h1 className="hero-elem text-white font-['Inter'] font-medium text-[clamp(36px,8vw,64px)] leading-[1.1] md:leading-[66px] tracking-normal text-center w-full">
           Trusted Wealth Stewardship
         </h1>
         
-        <p className="hero-elem text-white font-['Inter'] font-light text-[32px] leading-[66px] tracking-normal text-center w-full">
+        <p className="hero-elem text-white font-['Inter'] font-light text-[clamp(18px,4vw,32px)] leading-[1.3] md:leading-[66px] tracking-normal text-center w-full mt-2 md:mt-0">
           Built on Integrity and Insight
         </p>
       </div>
