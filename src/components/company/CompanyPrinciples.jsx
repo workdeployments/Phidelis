@@ -60,9 +60,7 @@ const CompanyPrinciples = () => {
           ))}
 
           {/* Solutions Action Card */}
-          <div className="flex flex-col justify-between p-8 rounded-[12px] bg-gradient-to-br from-[#4ea5d8] via-[#1a123e] to-[#0d071b] overflow-hidden relative shadow-md">
-            {/* The transparent glowing overlay seen in figma can be approximated with tailwind */}
-            <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-black/40 to-transparent pointer-events-none"></div>
+          <div className="flex flex-col justify-between p-8 rounded-[12px] bg-[url('/common/gradient-Bg.png')] bg-cover bg-center overflow-hidden relative shadow-md">
 
             <div className="relative z-10 h-full flex flex-col justify-between">
               <h3 className="text-white font-['Inter'] font-bold text-[24px] mb-[64px] tracking-tight">

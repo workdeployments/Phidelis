@@ -6,7 +6,7 @@ const CompanyIntro = () => {
       <div className="max-w-[1240px] mx-auto flex flex-col md:flex-row overflow-hidden rounded-[16px] shadow-sm">
         
         {/* Left Side - Gradient and Text */}
-        <div className="w-full md:w-[45%] lg:w-[42%] bg-gradient-to-br from-[#1C69A2] via-[#2D317D] to-[#3D1453] p-10 md:p-14 lg:p-[72px] flex flex-col justify-center">
+        <div className="w-full md:w-[45%] lg:w-[42%] bg-[url('/common/gradient-Bg.png')] bg-cover bg-center p-10 md:p-14 lg:p-[72px] flex flex-col justify-center">
           <h2 className="text-white font-['Inter'] font-semibold text-[22px] md:text-[26px] lg:text-[28px] leading-[1.4] tracking-tight mb-8">
             At Phidelis Capital, every decision is crafted towards your objectives.
           </h2>

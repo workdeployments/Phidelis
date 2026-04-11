@@ -49,7 +49,7 @@ const SolutionsAssetManagement = () => {
           ))}
 
           {/* 4th Column Image */}
-          <div className="rounded-[16px] overflow-hidden min-h-[300px] xl:min-h-full shadow-md bg-white">
+          <div className="rounded-[16px] overflow-hidden max-h-[250px] xl:min-h-full shadow-md bg-white">
             <img
               src="/solutions/solutionsassetmanagement.jpg"
               alt="Singapore Cityscape"

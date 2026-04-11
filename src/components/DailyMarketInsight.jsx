@@ -37,6 +37,18 @@ const DailyMarketInsight = () => {
         },
       });
 
+      // phone
+      gsap.from(".se-phone", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 50%",
+        },
+      });
+
       // Text block sequence
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -93,9 +105,8 @@ const DailyMarketInsight = () => {
             Follow Us on Linkedin
           </button>
         </div>
-        {/* Image: flows naturally on mobile, absolutely positioned on desktop */}
-        <div className="flex items-center justify-center lg:absolute lg:top-[-5rem] lg:right-20 lg:w-[30%]">
-          <img src="/homePage/dailyMarketInsights.png" alt="Daily Market Insights" className="w-full max-w-[300px] lg:max-w-none" />
+        <div className="se-phone w-[40%] absolute top-[-5rem] right-20">
+          <img src="/homePage/dailyMarketInsights.png" alt="" />
         </div>
       </div>
     </section>
