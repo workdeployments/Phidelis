@@ -138,7 +138,7 @@ const SolutionsDesigned = () => {
           ))}
 
           {/* 6th Leveraging Technology Accent Card */}
-          <div className="bg-gradient-to-br from-[#7C2D84] via-[#3D1453] to-[#1e2a5e] rounded-[16px] p-8 md:p-10 flex flex-col justify-between shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div className="bg-[url('/common/gradient-Bg.png')] bg-cover bg-center rounded-[16px] p-8 md:p-10 flex flex-col justify-between shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div>
               <h3 className="text-white font-['Inter'] font-bold text-[24px] tracking-tight mb-4 leading-tight">
                 Leveraging Technology
