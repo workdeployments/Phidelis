@@ -47,7 +47,7 @@ const teamMembers = [
 
 const CompanyTeam = () => {
   return (
-    <section className="w-full bg-gradient-to-tr from-[#3a1555] via-[#2D317D] to-[#2582b8] py-20 px-6 lg:px-[120px]">
+    <section className="w-full bg-[url('/common/gradient-Bg.png')] bg-cover bg-center py-20 px-6 lg:px-[120px]">
       <div className="max-w-[1240px] mx-auto">
         {/* Header */}
         <div className="mb-14 text-left">
