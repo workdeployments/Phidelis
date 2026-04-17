@@ -78,9 +78,9 @@ const SeasonedExperts = () => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
           {/* Left Column - Team Member Cards */}
           <div className="w-full lg:w-1/2">
-            <div className="se-avatars-grid grid grid-cols-3 gap-4 md:gap-6 items-stretch max-w-[720px] mx-auto lg:mx-0">
+            <div className="se-avatars-grid flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible gap-4 md:gap-6 items-stretch max-w-[720px] mx-auto lg:mx-0 snap-x snap-mandatory pb-8 md:pb-0 hide-scrollbar">
               {teamMembers.map((member, idx) => (
-                <div key={idx} className="se-avatar rounded-[12px] overflow-hidden shadow-md">
+                <div key={idx} className="se-avatar flex-none w-[75vw] sm:w-[250px] md:w-auto snap-center rounded-[12px] overflow-hidden shadow-md">
                   {/* Photo with gradient overlay */}
                   <div className="relative h-full min-h-[200px] bg-gradient-to-b from-[#1a2a5e] to-[#2d3d6d]">
                     <img

@@ -92,7 +92,7 @@ const DailyMarketInsight = () => {
       ref={containerRef}
       className="w-full bg-[#2A3A6A] py-24 px-6 md:px-[20px] lg:px-20 overflow-hidden"
     >
-      <div className="relative max-w-[1200px] mx-auto bg-[#2A4781] rounded-3xl p-8 md:p-16 lg:p-20 grid grid-cols-1 lg:grid-cols-2 gap-8 se-text-block overflow-visible">
+      <div className="relative max-w-[100%] mx-auto bg-[#2A4781] rounded-3xl p-8 md:p-16 lg:p-20 grid grid-cols-1 lg:grid-cols-2 gap-8 se-text-block overflow-visible">
         <div className="flex flex-col items-start">
           <div className="se-title text-white font-['Inter'] font-medium text-[clamp(28px,5vw,40px)] tracking-normal mb-6 lg:mb-10">
             Daily Market Insights, Delivered
@@ -101,12 +101,12 @@ const DailyMarketInsight = () => {
             Stay ahead with Phidelis Capital's daily reports on markets, trends,
             and opportunities.
           </div>
-          <button className="se-btn self-start bg-white text-[#2A3A6A] rounded-[32px] px-8 py-3 font-['Inter'] font-medium text-[16px] hover:bg-gray-100 transition-colors shadow-sm">
+          <button className="se-btn self-start bg-white text-[#2A3A6A] rounded-[32px] px-6 lg:px-8 py-3 font-['Inter'] font-medium text-[14px] lg:text-[16px] whitespace-nowrap hover:bg-gray-100 hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-sm">
             Follow Us on Linkedin
           </button>
         </div>
-        <div className="se-phone w-[40%] absolute top-[-5rem] right-20">
-          <img src="/homePage/dailyMarketInsights.png" alt="" />
+        <div className="se-phone relative w-[70%] sm:w-[50%] mx-auto mt-10 lg:absolute lg:w-[40%] lg:top-[-5rem] lg:right-20 lg:mt-0">
+          <img src="/homePage/dailyMarketInsights.png" alt="" className="w-full h-auto" />
         </div>
       </div>
     </section>

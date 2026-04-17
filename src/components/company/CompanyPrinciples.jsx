@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const principles = [
   {
@@ -30,11 +35,39 @@ const principles = [
 ];
 
 const CompanyPrinciples = () => {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from('.principles-header', {
+      scrollTrigger: {
+        trigger: '.principles-header',
+        start: 'top 85%',
+      },
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    });
+
+    gsap.from('.principles-card', {
+      scrollTrigger: {
+        trigger: '.principles-grid',
+        start: 'top 80%',
+      },
+      y: 40,
+      scale: 0.95,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power2.out',
+    });
+  }, { scope: containerRef });
+
   return (
-    <section className="w-full bg-[#1e2756] py-20 px-6 lg:px-[120px]">
-      <div className="max-w-[1240px] mx-auto">
+    <section ref={containerRef} className="w-full flex flex-col-reverse lg:flex-row justify-between overflow-hidden bg-[#1e2756]">
+      <div className="w-full py-10 lg:py-20 px-6 md:px-20 overflow-hidden">
         {/* Header Section */}
-        <div className="mb-20 text-left">
+        <div className="principles-header mb-20 text-left">
           <h2 className="text-white font-['Inter'] font-semibold text-[32px] md:text-[44px] leading-tight mb-8 tracking-tight">
             Principles that shape every action.
           </h2>
@@ -44,13 +77,13 @@ const CompanyPrinciples = () => {
         </div>
 
         {/* Principles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
+        <div className="principles-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12 auto-rows-fr items-stretch">
           {principles.map((p, idx) => (
-            <div key={idx} className="flex flex-col items-start pr-4">
+            <div key={idx} className="principles-card flex flex-col items-start pr-4 h-full">
               <div className="mb-6 h-10 flex items-center justify-start">
                 <img src={p.icon} alt={p.title} className="max-h-full w-auto object-contain" />
               </div>
-              <h3 className="text-white font-['Inter'] font-bold text-[22px] mb-3">
+              <h3 className="text-white font-['Inter'] font-bold text-[22px] mb-[15%]">
                 {p.title}
               </h3>
               <p className="text-white/80 font-['Inter'] font-normal text-[15px] leading-relaxed">
@@ -60,7 +93,7 @@ const CompanyPrinciples = () => {
           ))}
 
           {/* Solutions Action Card */}
-          <div className="flex flex-col justify-between p-8 rounded-[12px] bg-[url('/common/gradient-Bg.png')] bg-cover bg-center overflow-hidden relative shadow-md">
+          <div className="principles-card flex flex-col justify-between p-8 rounded-[12px] bg-[url('/common/gradient-Bg.png')] bg-cover bg-center overflow-hidden relative shadow-md h-full">
 
             <div className="relative z-10 h-full flex flex-col justify-between">
               <h3 className="text-white font-['Inter'] font-bold text-[24px] mb-[64px] tracking-tight">

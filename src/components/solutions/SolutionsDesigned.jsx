@@ -1,4 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const solutionsData = [
   {
@@ -108,48 +113,77 @@ const solutionsData = [
 ];
 
 const SolutionsDesigned = () => {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from('.solutions-header', {
+      scrollTrigger: {
+        trigger: '.solutions-header',
+        start: 'top 85%',
+      },
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    });
+
+    gsap.from('.solutions-card', {
+      scrollTrigger: {
+        trigger: '.solutions-card-grid',
+        start: 'top 80%',
+      },
+      y: 40,
+      scale: 0.95,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power2.out',
+    });
+  }, { scope: containerRef });
+
   return (
-    <section className="w-full bg-white py-20 px-6 lg:px-[120px]">
-      <div className="max-w-[1240px] mx-auto">
+    <section ref={containerRef} className="w-full flex flex-col-reverse lg:flex-row justify-between overflow-hidden">
+      <div className="w-full bg-white py-10 lg:py-20 px-6 md:px-20 overflow-hidden">
         {/* Title */}
-        <h2 className="text-[#1A2552] font-['Inter'] font-semibold text-[32px] md:text-[40px] leading-tight mb-12 tracking-tight">
+        <h2 className="solutions-header text-[#1A2552] font-['Inter'] font-semibold text-[32px] md:text-[40px] leading-tight mb-12 tracking-tight">
           Wealth Solutions Designed For You
         </h2>
 
         {/* Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="solutions-card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {/* Top 5 Standard Cards */}
           {solutionsData.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-[#F8F9FA] rounded-[16px] p-8 md:p-10 flex flex-col justify-start hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="mb-8">
-                {item.icon}
+            <div key={idx} className="solutions-card h-full">
+              <div className="bg-[#F8F9FA] rounded-[16px] p-8 md:p-10 flex flex-col justify-start hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
+                <div className="mb-8">
+                  {item.icon}
+                </div>
+                <h3 className="text-[#1A2552] font-['Inter'] font-semibold text-[20px] md:text-[22px] tracking-tight mb-4">
+                  {item.title}
+                </h3>
+                <p className="text-[#3b4b8f] font-['Inter'] font-medium text-[14px] leading-[1.6]">
+                  {item.desc}
+                </p>
               </div>
-              <h3 className="text-[#1A2552] font-['Inter'] font-semibold text-[20px] md:text-[22px] tracking-tight mb-4">
-                {item.title}
-              </h3>
-              <p className="text-[#3b4b8f] font-['Inter'] font-medium text-[14px] leading-[1.6]">
-                {item.desc}
-              </p>
             </div>
           ))}
 
           {/* 6th Leveraging Technology Accent Card */}
-          <div className="bg-[url('/common/gradient-Bg.png')] bg-cover bg-center rounded-[16px] p-8 md:p-10 flex flex-col justify-between shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div>
-              <h3 className="text-white font-['Inter'] font-bold text-[24px] tracking-tight mb-4 leading-tight">
-                Leveraging Technology
-              </h3>
-              <p className="text-white font-['Inter'] font-medium text-[15px] leading-[1.6]">
-                Clarity and control through intelligent tools.
-              </p>
+          <div className="solutions-card h-full">
+            <div className="bg-[url('/common/gradient-Bg.png')] bg-cover bg-center rounded-[16px] p-8 md:p-10 flex flex-col justify-between shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
+              <div>
+                <h3 className="text-white font-['Inter'] font-bold text-[24px] tracking-tight mb-4 leading-tight">
+                  Leveraging Technology
+                </h3>
+                <p className="text-white font-['Inter'] font-medium text-[15px] leading-[1.6]">
+                  Clarity and control through intelligent tools.
+                </p>
+              </div>
+              <button className="mt-12 bg-white text-[#1A2552] rounded-[32px] px-8 py-3 font-['Inter'] font-semibold text-[14px] w-max hover:bg-gray-100 transition-colors shadow-sm">
+                Learn more
+              </button>
             </div>
-            <button className="mt-12 bg-white text-[#1A2552] rounded-[32px] px-8 py-3 font-['Inter'] font-semibold text-[14px] w-max hover:bg-gray-100 transition-colors shadow-sm">
-              Learn more
-            </button>
           </div>
 
         </div>

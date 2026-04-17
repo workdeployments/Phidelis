@@ -1,8 +1,39 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const PartnerWithUs = () => {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from('.partner-left', {
+      scrollTrigger: {
+        trigger: '.partner-left',
+        start: 'top 85%',
+      },
+      x: -50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    });
+
+    gsap.from('.partner-right', {
+      scrollTrigger: {
+        trigger: '.partner-right',
+        start: 'top 85%',
+      },
+      x: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    });
+  }, { scope: containerRef });
+
   return (
-    <section className="relative w-full py-24 px-6 md:px-20 lg:px-20">
+    <section id="contact-section" ref={containerRef} className="relative w-full py-24 px-6 md:px-20 lg:px-20 overflow-hidden">
       {/* Background Image Setup */}
       <div
         className="absolute inset-0 -z-20"
@@ -19,7 +50,7 @@ const PartnerWithUs = () => {
       <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-stretch">
 
         {/* Left Column - Text & Info */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-between text-white lg:py-[50px]">
+        <div className="partner-left w-full lg:w-1/2 flex flex-col justify-between text-white lg:py-[50px]">
           <div>
             <h2 className="font-['Inter'] font-bold text-[36px] md:text-[46px] tracking-tight mb-8">
               Partner with us
@@ -58,7 +89,7 @@ const PartnerWithUs = () => {
         </div>
 
         {/* Right Column - Form */}
-        <div className="w-full lg:w-1/2">
+        <div className="partner-right w-full lg:w-1/2">
           <div className="bg-[#FAFAFB] rounded-[16px] p-8 md:p-[50px] shadow-2xl h-full flex flex-col">
             <h3 className="text-[#24346D] font-['Inter'] font-bold text-[28px] md:text-[32px] tracking-tight mb-10">
               Get Started

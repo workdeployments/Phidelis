@@ -69,8 +69,8 @@ const HowWeCreateValue = () => {
   ];
 
   return (
-    <section ref={containerRef} className="w-full flex flex-row justify-between overflow-hidden">
-      <div className="w-full bg-white py-20 px-6 md:px-20 overflow-hidden">
+    <section ref={containerRef} className="w-full flex flex-col-reverse lg:flex-row justify-between overflow-hidden">
+      <div className="w-full bg-white py-10 lg:py-20 px-6 md:px-20 overflow-hidden">
         <div className="max-w-[1440px] mx-auto">
           {/* Section Title */}
           <h2 className="hcv-title text-[#24346D] font-['Inter'] font-medium text-[clamp(32px,5vw,40px)] mb-16">
@@ -130,7 +130,7 @@ const HowWeCreateValue = () => {
         </div>
       </div>
       {/* Right Side: Large Feature Image */}
-      <div className="hcv-image-container w-[30%] overflow-hidden shrink-0 relative z-0">
+      <div className="hcv-image-container w-auto lg:w-[30%] h-[250px] md:h-[350px] lg:h-auto mx-6 mt-10 mb-4 lg:m-0 rounded-2xl lg:rounded-none shadow-xl lg:shadow-none overflow-hidden shrink-0 relative z-0">
         <img
           src="/homePage/howWeCreateValueImg.jpg"
           alt="Singapore Skyline"

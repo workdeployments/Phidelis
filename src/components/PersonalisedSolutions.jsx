@@ -76,19 +76,19 @@ const PersonalisedSolutions = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full flex flex-row justify-between overflow-hidden relative bg-[url('/common/gradient-Bg.png')] bg-cover bg-center"
+      className="w-full flex flex-col lg:flex-row justify-between overflow-hidden relative bg-[url('/common/gradient-Bg.png')] bg-cover bg-center"
     >
       {/* Left Column - Image */}
-      <div className="ps-image w-full lg:w-[35%] h-[350px] lg:h-auto overflow-hidden flex-shrink-0 shadow-lg">
+      <div className="ps-image w-full lg:w-[35%] h-[250px] md:h-[350px] lg:h-auto overflow-hidden flex-shrink-0 shadow-lg">
         <img
           src="/homePage/personalisedSolution.jpg"
           alt="Personalised Solutions"
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="relative py-20 px-6 md:px-20 overflow-hidden">
+      <div className="relative py-10 lg:py-20 px-6 md:px-20 overflow-hidden">
         <div className="max-w-[1440px] mx-auto z-10 relative">
-          <h2 className="ps-title text-white font-['Inter'] font-medium text-[36px] md:text-[40px] leading-[66px] tracking-normal mb-12">
+          <h2 className="ps-title text-white font-['Inter'] font-medium text-[30px] md:text-[36px] lg:text-[40px] leading-[40px] md:leading-[66px] tracking-normal mb-8 lg:mb-12">
             Personalised Solutions
           </h2>
 

@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full py-20 px-6 md:px-[60px] lg:px-[120px] bg-[url('/common/gradient-Bg.png')] bg-cover bg-center">
-      <div className="max-w-[1440px] mx-auto grid grid-cols-[9fr_3fr_1fr] gap-12 text-white font-['Inter']">
+      <div className="max-w-[1440px] mx-auto flex flex-col lg:grid lg:grid-cols-[9fr_3fr_1fr] gap-12 text-white font-['Inter']">
         {/* Logo Column */}
         <div className="flex flex-col justify-between h-full">
           <div className="flex items-center gap-3">
@@ -74,7 +74,7 @@ const Footer = () => {
           </div>
 
         {/* Copyright and Arrow Column */}
-        <div className="flex flex-col justify-between items-end md:w-1/4 shrink-0">
+        <div className="flex flex-row lg:flex-col justify-between items-center lg:items-end md:w-1/4 shrink-0">
           <button
             onClick={scrollToTop}
             className="w-[48px] h-[48px] rounded-full bg-[#8B3A8B] flex items-center justify-center hover:bg-[#722A72] transition-colors shadow-sm"

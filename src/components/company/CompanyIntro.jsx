@@ -1,12 +1,43 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const CompanyIntro = () => {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from('.intro-left', {
+      scrollTrigger: {
+        trigger: '.intro-left',
+        start: 'top 85%',
+      },
+      x: -50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    });
+
+    gsap.from('.intro-right', {
+      scrollTrigger: {
+        trigger: '.intro-right',
+        start: 'top 85%',
+      },
+      x: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    });
+  }, { scope: containerRef });
+
   return (
-    <section className="w-full bg-white py-16 md:py-[100px] px-6 lg:px-[120px]">
-      <div className="max-w-[1240px] mx-auto flex flex-col md:flex-row overflow-hidden rounded-[16px] shadow-sm">
+    <section ref={containerRef} className="w-full flex flex-col-reverse lg:flex-row justify-between overflow-hidden">
+      <div className="w-full bg-white py-10 lg:py-20 px-6 md:px-20 overflow-hidden flex flex-col md:flex-row rounded-[16px] shadow-sm">
         
         {/* Left Side - Gradient and Text */}
-        <div className="w-full md:w-[45%] lg:w-[42%] bg-[url('/common/gradient-Bg.png')] bg-cover bg-center p-10 md:p-14 lg:p-[72px] flex flex-col justify-center">
+        <div className="intro-left w-full md:w-[45%] lg:w-[42%] bg-[url('/common/gradient-Bg.png')] bg-cover bg-center p-10 md:p-14 lg:p-[72px] flex flex-col justify-center">
           <h2 className="text-white font-['Inter'] font-semibold text-[22px] md:text-[26px] lg:text-[28px] leading-[1.4] tracking-tight mb-8">
             At Phidelis Capital, every decision is crafted towards your objectives.
           </h2>
@@ -17,7 +48,7 @@ const CompanyIntro = () => {
         
         {/* Right Side - Image */}
         <div 
-          className="w-full md:w-[55%] lg:w-[58%] min-h-[350px] md:min-h-[480px] bg-cover bg-center"
+          className="intro-right w-full md:w-[55%] lg:w-[58%] min-h-[350px] md:min-h-[480px] bg-cover bg-center"
           style={{ backgroundImage: "url('/company/intro-image.jpg')" }}
         >
         </div>

@@ -14,12 +14,12 @@ const Navbar = () => {
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflowY = "";
     }
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflowY = "";
     };
   }, [isMobileMenuOpen]);
 
@@ -32,11 +32,20 @@ const Navbar = () => {
     });
   }, []);
 
+  const scrollToContact = (e) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+  };
+
   return (
     <>
       <nav
         ref={navRef}
-        className="w-full h-[80px] bg-[#24346D] px-[36px] fixed top-0 left-0 right-0 z-[110] flex items-center justify-between"
+        className="w-full h-[80px] bg-[#24346D] px-[30px] fixed top-0 left-0 right-0 z-[110] flex items-center justify-between"
       >
         {/* Logo Section */}
         <Link
@@ -91,7 +100,10 @@ const Navbar = () => {
           >
             <img src="/icons/linkedin.svg" alt="Linkedin" />
           </a>
-          <button className="w-[151px] h-[43px] text-white border border-white rounded-[40px] flex items-center justify-center font-['Inter'] font-normal text-[16px] leading-[100%] hover:bg-white hover:text-[#24346D] transition-colors">
+          <button 
+            onClick={scrollToContact}
+            className="w-[151px] h-[43px] text-white border border-white rounded-[40px] flex items-center justify-center font-['Inter'] font-normal text-[16px] leading-[100%] hover:bg-white hover:text-[#24346D] transition-colors"
+          >
             Get Started
           </button>
         </div>
@@ -149,7 +161,10 @@ const Navbar = () => {
         </ul>
 
         <div className="mt-12 flex gap-8">
-          <button className="w-[140px] h-[45px] text-white border border-white rounded-[40px] flex items-center justify-center font-['Inter'] font-normal text-[16px] hover:bg-white hover:text-[#24346D] transition-colors">
+          <button 
+            onClick={scrollToContact}
+            className="w-[140px] h-[45px] text-white border border-white rounded-[40px] flex items-center justify-center font-['Inter'] font-normal text-[16px] hover:bg-white hover:text-[#24346D] transition-colors"
+          >
             Get Started
           </button>
         </div>
